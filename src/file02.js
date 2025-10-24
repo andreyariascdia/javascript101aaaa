@@ -43,4 +43,18 @@ const frameworks = [
  *    LlamE a la función addRow pasando el objeto frameworkObj y el ID del cuerpo de la tabla "data-frameworks",
  *    para agregar una nueva fila con estos datos al cuerpo de la tabla HTML.
  */
+for (let fw of frameworks){
+  let lstSpt = fw.split("|");
+  let fwNom = lstSpt[0].trim();
+  let fwFecha = lstSpt[1].trim();
+  let fwUsers = lstSpt[2].trim();
+  let fwPop = lstSpt[3].trim();
+  var fwObj = {
+    frameworkName: fwNom,
+    releaseDate: fwFecha,
+    usersName: fwUsers,
+    popularityPercentage: fwPop,
+  };
+  addRow(fwObj,"data-frameworks");
+  }
 
